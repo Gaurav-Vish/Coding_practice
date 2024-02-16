@@ -18,21 +18,24 @@ class Result
     public static int hourglassSum(List<List<int>> arr)
     {
         int current = 0;
-        int max=int.MinValue;
-        for(int i=0; i<4; i++){
-            for(int j=0; j<4; j++){
-                current += arr[i][j]+arr[i][j+1]+arr[i][j+2];
-                current += arr[i+1][j+1];
-                current += arr[i+2][j]+arr[i+2][j+1]+arr[i+2][j+2];
-                if(current>max){
-                    max=current;
+        int max = int.MinValue;
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                current += arr[i][j] + arr[i][j + 1] + arr[i][j + 2];
+                current += arr[i + 1][j + 1];
+                current += arr[i + 2][j] + arr[i + 2][j + 1] + arr[i + 2][j + 2];
+                if (current > max)
+                {
+                    max = current;
                 }
-                current=0;
+                current = 0;
             }
         }
         Console.WriteLine(max);
         return max;
-        
+
     }
 
 }

@@ -1,5 +1,7 @@
-public class Solution {
-    public void ReverseString(char[] s) {
+public class Solution
+{
+    public void ReverseString(char[] s)
+    {
         Array.Reverse(s);
     }
 }

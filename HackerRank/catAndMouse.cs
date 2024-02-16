@@ -12,19 +12,23 @@ using System.Text.RegularExpressions;
 using System.Text;
 using System;
 
-class Solution {
+class Solution
+{
 
     // Complete the catAndMouse function below.
-    static string catAndMouse(int x, int y, int z) {
-        return Math.Abs(x-z)<Math.Abs(y-z)?"Cat A":(Math.Abs(x-z)>Math.Abs(y-z)?"Cat B":"Mouse C");
+    static string catAndMouse(int x, int y, int z)
+    {
+        return Math.Abs(x - z) < Math.Abs(y - z) ? "Cat A" : (Math.Abs(x - z) > Math.Abs(y - z) ? "Cat B" : "Mouse C");
     }
 
-    static void Main(string[] args) {
+    static void Main(string[] args)
+    {
         TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
 
         int q = Convert.ToInt32(Console.ReadLine());
 
-        for (int qItr = 0; qItr < q; qItr++) {
+        for (int qItr = 0; qItr < q; qItr++)
+        {
             string[] xyz = Console.ReadLine().Split(' ');
 
             int x = Convert.ToInt32(xyz[0]);

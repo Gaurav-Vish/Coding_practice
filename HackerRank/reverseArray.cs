@@ -25,10 +25,11 @@ class Result
     public static List<int> reverseArray(List<int> a)
     {
         List<int> rev = new List<int>();
-            for(int i=0; i< a.Count; i++){
-                rev.Add(a[a.Count-1-i]);
-            }
-            return rev;
+        for (int i = 0; i < a.Count; i++)
+        {
+            rev.Add(a[a.Count - 1 - i]);
+        }
+        return rev;
     }
 
 }
