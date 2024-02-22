@@ -16,31 +16,26 @@ class Result
 {
 
     /*
-     * Complete the 'equalizeArray' function below.
+     * Complete the 'sockMerchant' function below.
      *
      * The function is expected to return an INTEGER.
-     * The function accepts INTEGER_ARRAY arr as parameter.
+     * The function accepts following parameters:
+     *  1. INTEGER n
+     *  2. INTEGER_ARRAY ar
      */
 
-    public static int equalizeArray(List<int> arr)
+    public static int sockMerchant(int n, List<int> ar)
     {
-        int maxCount = int.MinValue, count = 1, maxCountVal = 0;
-        arr.Sort();
-        for(int i=0; i<arr.Count-1; i++){
-            if(arr[i]==arr[i+1]) {
-                count++;
-            }
-            else{
-                count=1;
-            }
-            if(count>=maxCount) {
-                maxCount=count;
-                maxCountVal=arr[i];
+        int pairs=0;
+        ar.Sort();
+        for(int i=0;i<ar.Count-1;i++){
+            if(ar[i]==ar[i+1]){
+                pairs++;
+                Console.WriteLine(pairs);
             }
         }
-        return arr.Count-maxCount; 
+        return pairs;
     }
-
 }
 
 class Solution
@@ -51,9 +46,9 @@ class Solution
 
         int n = Convert.ToInt32(Console.ReadLine().Trim());
 
-        List<int> arr = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arrTemp => Convert.ToInt32(arrTemp)).ToList();
+        List<int> ar = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arTemp => Convert.ToInt32(arTemp)).ToList();
 
-        int result = Result.equalizeArray(arr);
+        int result = Result.sockMerchant(n, ar);
 
         textWriter.WriteLine(result);
 
